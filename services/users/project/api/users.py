@@ -86,7 +86,7 @@ api.add_resource(UsersPing, '/users/ping')
 api.add_resource(UsersList, '/users')
 api.add_resource(Users, '/users/<user_id>')
 
-@users_blueprint.route('/', methods=['GET'])
+@users_blueprint.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         username = request.form['username']
