@@ -16,9 +16,10 @@ api = Api(users_blueprint)
 class UsersPing(Resource):
     def get(self):
         return {
-        'status': 'success',
-        'message': 'pong!'
-    }
+            'status': 'success',
+            'message': 'pong!'
+        }
+
 
 class UsersList(Resource):
     def post(self):
@@ -56,6 +57,7 @@ class UsersList(Resource):
         }
         return response_object, 200
 
+
 class Users(Resource):
     def get(self, user_id):
         """Get single user details"""
@@ -85,6 +87,7 @@ class Users(Resource):
 api.add_resource(UsersPing, '/users/ping')
 api.add_resource(UsersList, '/users')
 api.add_resource(Users, '/users/<user_id>')
+
 
 @users_blueprint.route('/', methods=['GET', 'POST'])
 def index():
